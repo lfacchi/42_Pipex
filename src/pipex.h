@@ -10,16 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-#include <unistd.h>
-#include <sys/types.h>
-#include <errno.h>
-#include <stdio.h>
-#include <sys/wait.h>
-#include <stdlib.h>
-#include "../42_libft/libft.h"
-#include <fcntl.h>
+#ifndef PIPEX_H
+# define PIPEX_H
+# include <unistd.h>
+# include <sys/types.h>
+# include <errno.h>
+# include <stdio.h>
+# include <sys/wait.h>
+# include <stdlib.h>
+# include "../42_libft/libft.h"
+# include <fcntl.h>
 
 typedef struct s_proc
 {
@@ -36,3 +36,5 @@ void	exec_cmd(char *cmd, char **env);
 void	check_spaces(char *cmd);
 void	trans_space(char **cmd);
 char	**decode_cmd(char *arg);
+
+#endif

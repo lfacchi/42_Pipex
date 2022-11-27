@@ -18,18 +18,18 @@ char	*cmd_path_find(char **env, char *cmd)
 	int		j;
 	char	**path_list;
 
-	i = 0; 
+	i = 0;
 	j = 0;
-	while(env[i] != NULL && ft_strncmp("PATH=", env[i], 5) != 0)
+	while (env[i] != NULL && ft_strncmp("PATH=", env[i], 5) != 0)
 		i++;
-	path_list= ft_split(env[i], ':');
+	path_list = ft_split(env[i], ':');
 	path_list[j] = ft_strtrim(path_list[j], "PATH=");
-	while(path_list[j])
+	while (path_list[j])
 	{
 		path_list[j] = ft_strjoin(path_list[j], "/");
 		path_list[j] = ft_strjoin(path_list[j], cmd);
 		if (access(path_list[j], F_OK) == 0 && access(path_list[j], X_OK) == 0)
-			break;
+			break ;
 		free(path_list[j]);
 		j++;
 	}

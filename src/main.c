@@ -12,11 +12,10 @@
 
 #include "pipex.h"
 
-int main(int argc, char **argv, char **env)
+int	main(int argc, char **argv, char **env)
 {
 	int		fd[2];
 	int		pid;
-
 
 	if (argc != 5)
 	{
